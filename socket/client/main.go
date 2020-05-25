@@ -24,11 +24,14 @@ func main() {
 	for {
 		fmt.Scanln(&msg)
 
+		if msg == "exit" {
+			os.Exit(0)
+		}
+
 		// 发送数据
 		_, err = conn.Write([]byte(msg))
 		checkError(err)
 	}
-
 }
 
 func checkError(err error) {
